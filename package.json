@@ -1,0 +1,33 @@
+{
+  "name": "clawd-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:vite\" \"npm run dev:worker\"",
+    "dev:vite": "vite",
+    "dev:worker": "wrangler dev --port 8787",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.10.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251216.0",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "autoprefixer": "^10.4.23",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4",
+    "wrangler": "^4.55.0"
+  }
+}
